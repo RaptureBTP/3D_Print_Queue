@@ -1,0 +1,19 @@
+{
+  "name": "3d_print_queue",
+  "version": "0.2.0",
+  "description": "Queue for the Valdez 3D printer",
+  "main": "server.js",
+  "directories": {
+    "doc": "doc"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Brady Ericksen",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.6.4",
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3"
+  }
+}

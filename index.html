@@ -1,0 +1,63 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>3D Printer Queue</title>
+        <meta name="description" content="A site for the Lehi house to keep track of its print queue.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <!-- Place favicon.ico in the root directory -->
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    </head>
+    <body>
+        <div ng-app="3Dqueue">
+            <div class="container">
+                <!--[if lt IE 8]>
+                <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+                <![endif]-->
+
+                <!-- Add your site or application content here -->
+
+                    <div class="jumbotron">
+                        <h1>Virtual queue for the valdez printer</h1>
+                    </div>
+
+                <div class="row">
+                    <div class="col-md-3"></div>
+                    <div class="col-md-6">
+                        <div class="queueTitle">Current 3D Print Queue:</div>
+                        <div ng-controller="QueueController">
+                            <div class="panel panel-default">
+                                <div class="tasks panel-body" ng-repeat="item in queue">{{item.name}} - {{item.user}}</div>
+                            </div>
+                            <div class="tasks panel-body">
+                                <form name="newItemForm">
+                                    <label class="newTaskLabel" for="newTask">New Item: </label>
+                                    <input ng-model="newTask" id="newTask"/><span class="glyphicon glyphicon-plus clickable" ng-click="addItem()"></span>
+                                    <button ng-click="createJSON()"></button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3"></div>
+                </div>
+
+
+                <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+                <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
+                <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+                <!-- Latest compiled and minified CSS -->
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+                <script src="js/plugins.js"></script>
+                <script src="js/main.js"></script>
+
+            </div>
+
+        </div>
+    </body>
+</html>
